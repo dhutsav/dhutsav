@@ -2,10 +2,10 @@
 
 ## About Me
 
-I'm currently a student doing Computer System Technician - Software Support program at Mohawk College, Hamilton, ON, Canada. I'm a passionate techie who loves to code. I'm currently focusing on front-end development, using HTML, CSS & Javascript. I enjoy working on projects that challange my problem-solving skills and allow me to continuously learn, improve and grow.
+I'm a Computer System Technician - Software Support graduate at Mohawk College, Hamilton, ON, Canada. I'm a passionate techie who loves to code. I'm currently focusing on front-end development, using HTML, CSS & Javascript. I enjoy working on projects that challange my problem-solving skills and allow me to continuously learn, improve and grow.
 I'm currently developing projects using the XAMPP environment to build and test my webpage.
 
-- 🌱 I’m currently learning Mobile Web Development, Cloud Computing, Data Structure & Algorithm as part of my academic.
+- 🌱 I’m have learned Mobile Web Development, Cloud Computing, Data Structure & Algorithm as part of my academic.
 - 🔭 I’m working on designing and creating webpages.
 - 💬 Ask me about developing webpages, creating databases, or setting up XAMPP environments.
 - ⚡ Fun fact: I love designing and creating the webpages.
