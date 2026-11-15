@@ -1,318 +1,540 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <title>Utsav Dhakal | Front-End Developer</title>
-    <!-- Google Font -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!--Desktop Navigation-->
-    <nav id="desktop-nav" class="navbar">
-        <div class="logo-container">
-            <a href="#profile">
-                <img src="./assets/logo.svg" alt="Utsav logo" class="logo">
-            </a>
-        </div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <ul class="nav-links">
-            <li><a href="#profile" class="link-to">Home</a></li>
-            <li><a href="#about" class="link-to">About</a></li>
-            <li><a href="#experience" class="link-to">Experience</a></li>
-            <li><a href="#projects" class="link-to">Projects</a></li>
-            <li><a href="#contact" class="link-to">Contact</a></li>
+  <meta name="description"
+    content="Portfolio of Utsav Dhakal, a Computer System Technician – Software Support graduate based in Saskatoon, Saskatchewan. IT support, technical troubleshooting and web development.">
+
+  <meta name="theme-color" content="#0b1220">
+
+  <title>Utsav Dhakal | IT Support & Web Development</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="brand" aria-label="Utsav Dhakal home">
+        <span class="brand-mark">UD</span>
+        <span>Utsav<span class="accent">.</span></span>
+      </a>
+
+      <div class="nav-actions">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <button id="theme-toggle" type="button">🌞</button>
-    </nav>
-    
-    <!--Hamburger Navigation-->
-    <nav id="hamburger-nav">
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <ul class="menu-links">
-                <li><a href="#profile" onclick="toggleMenu()">Home</a></li>
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!--PROFILE-->
-    <section id="profile">
-        <div class="container">
-            <div class="socials-container">
-                <a href="https://www.linkedin.com/in/dhutsav/" target="_blank" class="social-icon" data-tooltip="LinkedIn">
-                    <i data-lucide="linkedin"></i>
-                </a>
-                <a href="https://github.com/dhutsav/" target="_blank" class="social-icon" data-tooltip="GitHub">
-                    <i data-lucide="github"></i>
-                </a>
-                <a href="mailto:dh.utsav23@gmail.com" class="social-icon" data-tooltip="Email">
-                    <i data-lucide="mail"></i>
-                </a>
-            </div>
-            <div class="hero-text">
-                <p class="section-text">Hello, I'm</p>
-                <h1 class="hero-title">Utsav <span>Dhakal</span></h1>
-                <p class="section-text">Front-End Developer</p>
-                <p class="hero-desc">I design and build modern, responsive, and user-focused web interfaces.</p>
-                <div class="hero-stats"><div><strong>Hands-on</strong><span>Experience</span></div>
-                <div><strong>Multiple Personal</strong><span>Projects</span></div>
-                <div><strong>100%</strong><span>Responsive</span></div></div>
-                <div class="btn-container">
-                    <button class="btn btn-outline"onclick="window.open('./assets/resume.docx')">Download CV</button>
-                    <button class="btn btn-primary"onclick="location.href='#contact'">Contact Me</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--ABOUT ME-->
-    <section id="about">
-        <div class="container about-grid">
-            <!-- LEFT: IMAGE -->
-             <div class="about-image">
-                <img src="./assets/about1.jpeg" alt="Utsav Dhakal">
-            </div>
-            <!-- RIGHT: CONTENT -->
-             <div class="about-content">
-                <h2 class="section-title">About Me</h2>
-                <p class="about-intro">
-                    I'm a Front-End Developer and Computer System Technician student based in
-                    Saskatoon, Canada. I enjoy building clean, responsive, and user-focused web
-                    interfaces while continuously improving my technical skills.
-                </p>
-                <!-- CARDS -->
-                 <div class="about-cards">
-                    <div class="about-card">
-                        <h3>Experience</h3>
-                        <p>2+ Years<br>Front-End Development</p>
-                    </div>
-                    <div class="about-card">
-                        <h3>Education</h3>
-                        <p>Diploma<br>Computer System Technician</p>
-                    </div>
-                </div>
-                <!-- SKILLS -->
-                 <div class="about-skills">
-                    <h3>Skills</h3>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>PHP</li>
-                        <li>Bootstrap</li>
-                        <li>MySQL</li>
-                        <li>Git & GitHub</li>
-                        <li>XAMPP</li>
-                    </ul>
-                </div>
-                
-                <!-- PERSONAL -->
-                 <div class="about-extra">
-                    <p>
-                        I’m currently learning Mobile Web Development, Cloud Computing, and
-                        Data Structures & Algorithms. I love exploring modern web design trends
-                        and building real-world projects.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--EXPERIENCE-->
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Experience & Skills</h2>
-            <div class="experience-grid">
-
-                <!-- FRONTEND -->
-                 <div class="experience-card">
-                    <h3 class="experience-title">Frontend</h3>
-                    <ul class="skill-list">
-                        <li><span>HTML</span><small>Experienced</small></li>
-                        <li><span>CSS</span><small>Experienced</small></li>
-                        <li><span>JavaScript</span><small>Experienced</small></li>
-                        <li><span>Material UI</span><small>Intermediate</small></li>
-                    </ul>
-                </div>
-
-                <!-- BACKEND & TOOLS -->
-                 <div class="experience-card">
-                    <h3 class="experience-title">Backend & Tools</h3>
-                    <ul class="skill-list">
-                        <li><span>Node.js</span><small>Experienced</small></li>
-                        <li><span>PostgreSQL</span><small>Experienced</small></li>
-                        <li><span>Python</span><small>Experienced</small></li>
-                        <li><span>Java</span><small>Intermediate</small></li>
-                        <li><span>Bootstrap</span><small>Experienced</small></li>
-                        <li><span>Git</span><small>Intermediate</small></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--PROJECTS-->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            
-            <div class="projects-grid">
-                <!-- Project Card -->
-                 <article class="project-card">
-                    <div class="project-image">
-                        <img src="./assets/about1.jpeg" alt="Project One">
-                    </div>
-                    
-                    <div class="project-content">
-                        <h3>Project One</h3>
-                        <p class="project-desc">
-                            A modern responsive web application built using HTML, CSS and JavaScript.
-                        </p>
-                        
-                        <div class="project-buttons">
-                            <a href="https://github.com/dhutsav?tab=repositories" target="_blank" class="btn btn-outline">GitHub</a>
-                            <a href="https://github.com/dhutsav?tab=repositories" target="_blank" class="btn btn-primary">Live Demo</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Project Card -->
-                 <article class="project-card">
-                    <div class="project-image">
-                        <img src="./assets/about1.jpeg" alt="Project Two">
-                    </div>
-                    
-                    <div class="project-content">
-                        <h3>Project Two</h3>
-                        <p class="project-desc">
-                            Frontend-focused project with clean UI, accessibility and responsiveness.
-                        </p>
-                        <div class="project-buttons">
-                            <a href="#" class="btn btn-outline">GitHub</a>
-                            <a href="#" class="btn btn-primary">Live Demo</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Project Card -->
-                 <article class="project-card">
-                    <div class="project-image">
-                        <img src="./assets/about1.jpeg" alt="Project Three">
-                    </div>
-                    
-                    <div class="project-content">
-                        <h3>Project Three</h3>
-                        <p class="project-desc">
-                            Full project showcasing UI design, interaction, and real-world layout.
-                        </p>
-                        <div class="project-buttons">
-                            <a href="#" class="btn btn-outline">GitHub</a>
-                            <a href="#" class="btn btn-primary">Live Demo</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!--CONTACT-->
-    <section id="contact" class="contact-section">
-        <h1 class="contact-title">Let’s Connect</h1>
-        <p class="contact-subtitle">
-            Have a question, project idea, or opportunity? I’d love to hear from you.
-        </p>
-        
-        <div class="contact-cards">
-            <!-- Email -->
-             <a href="mailto:utsavdhakal3@gmail.com" class="contact-card">
-                <span class="contact-icon">✉️</span>
-                <div>
-                    <h3>Email</h3>
-                    <p>utsavdhakal3@gmail.com</p>
-                </div>
-            </a>
-            
-            <!-- LinkedIn -->
-             <a href="https://www.linkedin.com/in/dhutsav/" target="_blank" class="contact-card">
-                <span class="contact-icon">💼</span>
-                <div>
-                    <h3>LinkedIn</h3>
-                    <p>linkedin.com/in/dhutsav</p>
-                </div>
-            </a>
-            
-            <!-- GitHub -->
-             <a href="https://github.com/dhutsav" target="_blank" class="contact-card">
-                <span class="contact-icon">🐙</span>
-                <div>
-                    <h3>GitHub</h3>
-                    <p>github.com/dhutsav</p>
-                </div>
-            </a>
-        </div>
-
-        <!--FOOTER-->
-    <footer class="site-footer">
-        <div class="footer-container">
-            
-            <!-- Left -->
-             <div class="footer-left">
-                <p class="footer-name"><img src="./assets/logo.svg" alt="Utsav logo" class="logo"></p>
-                <p class="footer-role">Front-End Developer</p>
-            </div>
-            
-            <!-- Center socials -->
-             <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/dhutsav/" target="_blank" aria-label="LinkedIn">
-                    <i data-lucide="linkedin"></i>
-                </a>
-                <a href="https://github.com/dhutsav/" target="_blank" aria-label="GitHub">
-                    <i data-lucide="github"></i>
-                </a>
-                <a href="mailto:utsavdhakal3@gmail.com" aria-label="Email">
-                    <i data-lucide="mail"></i>
-                </a>
-            </div>
-            
-            <!-- Right -->
-             <div class="footer-right">
-                <p>© 2026</p>
-                <p class="easter-egg">Built with ❤️ & curiosity</p>
-            </div>
-        </div>
-        
-        <!-- Back to top -->
-         <button class="back-to-top" aria-label="Back to top">
-            <i data-lucide="arrow-up"></i>
+        <button
+          class="icon-button theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Switch to light mode"
+          title="Toggle color theme">
+          ☀
         </button>
-    </footer>
+
+        <button
+          class="icon-button menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-controls="nav-links"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            Based in Saskatoon, Saskatchewan
+          </div>
+
+          <p class="hero-greeting">Hello, I'm</p>
+
+          <h1>Utsav <span class="gradient-text">Dhakal.</span></h1>
+
+          <p class="hero-role">
+            IT Support <span>/</span> Software Support
+            <span>/</span> Web Development
+          </p>
+
+          <p class="hero-description">
+            I'm a Computer System Technician – Software Support
+            graduate with hands-on college lab training in Windows,
+            Microsoft 365, Active Directory, networking, and
+            troubleshooting. I also enjoy building responsive,
+            user-friendly websites.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              Explore My Work <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+              Get in Touch
+            </a>
+          </div>
+
+          <div class="social-links">
+            <a
+              href="https://github.com/dhutsav"
+              target="_blank"
+              rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/dhutsav/"
+              target="_blank"
+              rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+
+            <a href="mailto:dh.utsav23@gmail.com">
+              Email ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Technical focus areas">
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span>utsav / portfolio</span>
+            </div>
+
+            <div class="terminal-body">
+              <p><span class="terminal-prompt">$</span> whoami</p>
+              <p class="terminal-output">Utsav Dhakal</p>
+
+              <p><span class="terminal-prompt">$</span> focus --areas</p>
+              <p class="terminal-output">IT Support</p>
+              <p class="terminal-output">Software Support</p>
+              <p class="terminal-output">Web Development</p>
+
+              <p><span class="terminal-prompt">$</span> education</p>
+              <p class="terminal-output">Mohawk College · Diploma</p>
+
+              <p class="terminal-ready">
+                <span class="terminal-prompt">✓</span>
+                Ready to learn, support & build
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    
+    <!-- ABOUT -->
+    <section class="section section-alt" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">01 / ABOUT ME</p>
+          <h2>A little about <span class="accent">me</span></h2>
+          <p>
+            A technical foundation, a customer-first mindset,
+            and a passion for continuous learning.
+          </p>
+        </div>
 
+        <div class="about-grid">
+          <div class="about-copy">
+            <h3>Technology is about solving problems for people.</h3>
 
-    <!--SCRIPTS-->
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-    lucide.createIcons();
-    </script>
+            <p>
+              I graduated from Mohawk College with a diploma in
+              Computer System Technician – Software Support.
+              Through college labs, I developed practical familiarity
+              with operating systems, software installation,
+              user account administration, virtualization,
+              and networking fundamentals.
+            </p>
+
+            <p>
+              My customer service experience at Sport Chek has
+              strengthened my communication, patience, and
+              problem-solving skills. I enjoy helping people
+              understand issues and finding practical solutions.
+            </p>
+
+            <p>
+              I'm pursuing entry-level opportunities in IT support
+              and software support while continuing to grow my
+              web development skills.
+            </p>
+          </div>
+
+          <div class="about-highlights">
+            <article class="info-card">
+              <span class="card-icon" aria-hidden="true">🎓</span>
+              <h3>Education</h3>
+              <p class="info-title">
+                Computer System Technician – Software Support
+              </p>
+              <p>Mohawk College</p>
+              <span class="info-detail">Graduated September 2025</span>
+            </article>
+
+            <article class="info-card">
+              <span class="card-icon" aria-hidden="true">📚</span>
+              <h3>Currently Learning</h3>
+              <p class="info-title">CompTIA A+</p>
+              <p>Certification preparation in progress</p>
+            </article>
+
+            <article class="info-card">
+              <span class="card-icon" aria-hidden="true">📍</span>
+              <h3>Location</h3>
+              <p class="info-title">Saskatoon, Saskatchewan</p>
+              <p>Canada</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">02 / TECHNICAL SKILLS</p>
+          <h2>What I <span class="accent">work with</span></h2>
+          <p>
+            Skills developed through coursework, technical labs,
+            independent learning, and web projects.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">🖥️</div>
+            <h3>IT Support & Troubleshooting</h3>
+            <p>
+              Windows 10/11, software and driver installation,
+              PC troubleshooting, printer troubleshooting,
+              and hardware fundamentals.
+            </p>
+            <div class="tags">
+              <span>Windows</span>
+              <span>PC Support</span>
+              <span>Hardware</span>
+              <span>Troubleshooting</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">☁️</div>
+            <h3>Microsoft & User Support</h3>
+            <p>
+              Microsoft 365 applications, Outlook, Teams,
+              OneDrive, Active Directory user administration
+              in labs, and Group Policy fundamentals.
+            </p>
+            <div class="tags">
+              <span>Microsoft 365</span>
+              <span>Active Directory</span>
+              <span>Teams</span>
+              <span>Group Policy</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">🌐</div>
+            <h3>Networking & Virtualization</h3>
+            <p>
+              TCP/IP, DNS, DHCP, LAN and Wi-Fi concepts,
+              network troubleshooting commands,
+              and virtual machine practice.
+            </p>
+            <div class="tags">
+              <span>TCP/IP</span>
+              <span>DNS / DHCP</span>
+              <span>VirtualBox</span>
+              <span>VMware</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">💻</div>
+            <h3>Web Development</h3>
+            <p>
+              Building responsive interfaces with HTML,
+              CSS, and JavaScript, with Git and GitHub
+              for source control.
+            </p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Git & GitHub</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">03 / EXPERIENCE</p>
+          <h2>Experience & <span class="accent">training</span></h2>
+          <p>
+            Combining practical technical education
+            with real-world customer service experience.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-date">Oct 2024 – Present</span>
+              <span class="type-label">Work Experience</span>
+            </div>
+
+            <div class="timeline-content">
+              <h3>Cashier & Customer Support</h3>
+              <p class="organization">Sport Chek · Saskatoon, SK</p>
+              <ul>
+                <li>
+                  Assist customers in a fast-paced retail environment,
+                  answering questions and resolving concerns.
+                </li>
+                <li>
+                  Maintain accuracy while processing transactions
+                  and following store procedures.
+                </li>
+                <li>
+                  Help train new team members on customer service
+                  practices and store systems.
+                </li>
+                <li>
+                  Communicate clearly with customers and coworkers
+                  to resolve problems efficiently.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-date">Graduated Sep 2025</span>
+              <span class="type-label">Technical Education</span>
+            </div>
+
+            <div class="timeline-content">
+              <h3>Computer System Technician – Software Support</h3>
+              <p class="organization">Mohawk College · Hamilton, ON</p>
+              <ul>
+                <li>
+                  Practiced Windows setup, software installation,
+                  and troubleshooting in technical labs.
+                </li>
+                <li>
+                  Completed Active Directory lab exercises
+                  involving user accounts, password resets,
+                  and permissions.
+                </li>
+                <li>
+                  Studied networking, virtualization,
+                  Microsoft 365, and system support concepts.
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">04 / PROJECTS</p>
+          <h2>Things I've <span class="accent">built & practiced</span></h2>
+          <p>
+            A mix of web development work and hands-on
+            technical training.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-art" aria-hidden="true">
+              <div class="mock-browser">
+                <div class="mock-browser-bar">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mock-browser-content">
+                  <span class="mock-label">PORTFOLIO</span>
+                  <strong>Utsav Dhakal</strong>
+                  <span>IT Support · Web Development</span>
+                  <div class="mock-lines"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-type">WEB DEVELOPMENT</span>
+              <h3>Personal Portfolio Website</h3>
+              <p>
+                My personal website built with HTML, CSS,
+                and JavaScript. It presents my technical
+                background, projects, and contact information
+                with a responsive layout.
+              </p>
+
+              <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>GitHub Pages</span>
+              </div>
+
+              <div class="project-links">
+                <a
+                  href="https://github.com/dhutsav/utsav-portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Source Code ↗
+                </a>
+                <a
+                  href="https://dhutsav.github.io/utsav-portfolio/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Live Website ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-art lab-art" aria-hidden="true">
+              <div class="lab-symbol">⌘</div>
+              <div class="lab-caption">TECHNICAL LAB PRACTICE</div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-type">COLLEGE LAB TRAINING</span>
+              <h3>Windows & Active Directory Labs</h3>
+              <p>
+                Hands-on coursework covering Windows
+                configuration, user account creation,
+                password resets, permissions, and
+                common troubleshooting scenarios.
+              </p>
+
+              <div class="tags">
+                <span>Windows</span>
+                <span>Active Directory</span>
+                <span>User Accounts</span>
+                <span>Virtual Machines</span>
+              </div>
+
+              <p class="project-note">
+                Coursework and lab practice — not professional
+                IT employment or a published software project.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-alt contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">05 / CONTACT</p>
+          <h2>Let's <span class="accent">connect</span></h2>
+          <p>
+            Interested in discussing an IT support opportunity,
+            a software support role, or a web project?
+            I'd be happy to connect.
+          </p>
+        </div>
+
+        <div class="contact-panel">
+          <div>
+            <h3>Have an opportunity in mind?</h3>
+            <p>
+              Reach out by email or connect with me
+              on LinkedIn or GitHub.
+            </p>
+            <a
+              class="contact-email"
+              href="mailto:dh.utsav23@gmail.com">
+              dh.utsav23@gmail.com ↗
+            </a>
+          </div>
+
+          <div class="contact-buttons">
+            <a
+              class="btn btn-primary"
+              href="mailto:dh.utsav23@gmail.com">
+              Send an Email
+            </a>
+            <a
+              class="btn btn-secondary"
+              href="https://www.linkedin.com/in/dhutsav/"
+              target="_blank"
+              rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="footer-brand" href="#home">Utsav Dhakal<span class="accent">.</span></a>
+        <p>IT Support · Software Support · Web Development</p>
+      </div>
+
+      <div class="footer-right">
+        <p>© <span id="year">2026</span> Utsav Dhakal</p>
+        <a href="#home">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
