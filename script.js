@@ -1,7 +1,6 @@
+"use strict";
 
-/* =========================
-   MOBILE NAVIGATION
-========================= */
+/* MOBILE NAVIGATION */
 
 const menu = document.querySelector(".menu-links");
 const hamburger = document.querySelector(".hamburger-icon");
@@ -39,7 +38,13 @@ document.querySelectorAll(".menu-links a").forEach(link => {
 
 document.addEventListener("keydown", event => {
   if (event.key === "Escape") {
+    const wasOpen = menu && menu.classList.contains("open");
+
     closeMenu();
+
+    if (wasOpen && hamburger) {
+      hamburger.focus();
+    }
   }
 });
 
@@ -51,10 +56,13 @@ document.addEventListener("click", event => {
   }
 });
 
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 1100) {
+    closeMenu();
+  }
+});
 
-/* =========================
-   LUCIDE ICON INITIALIZATION
-========================= */
+/* LUCIDE ICONS */
 
 function initializeIcons() {
   if (
@@ -62,17 +70,10 @@ function initializeIcons() {
     typeof window.lucide.createIcons === "function"
   ) {
     window.lucide.createIcons();
-  } else {
-    console.warn(
-      "Lucide icons could not be loaded. Check the external script URL."
-    );
   }
 }
 
-
-/* =========================
-   LIGHT / DARK THEME
-========================= */
+/* LIGHT / DARK THEME */
 
 const body = document.body;
 const desktopThemeToggle = document.getElementById("theme-toggle");
@@ -80,30 +81,36 @@ const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
 
 function updateThemeButtons() {
   const isDark = body.classList.contains("dark-theme");
+  const actionLabel = isDark
+    ? "Switch to light theme"
+    : "Switch to dark theme";
 
   if (desktopThemeToggle) {
     desktopThemeToggle.textContent = isDark ? "☀️" : "🌙";
-    desktopThemeToggle.setAttribute(
-      "aria-label",
-      isDark ? "Switch to light theme" : "Switch to dark theme"
-    );
+    desktopThemeToggle.setAttribute("aria-label", actionLabel);
   }
 
   if (mobileThemeToggle) {
+    mobileThemeToggle.setAttribute("aria-label", actionLabel);
+
     const label = mobileThemeToggle.querySelector("span");
+    const icon = mobileThemeToggle.querySelector("svg, i");
 
     if (label) {
       label.textContent = isDark ? "Light mode" : "Dark mode";
     }
 
-    const icon = mobileThemeToggle.querySelector("svg, i");
-
     if (icon) {
-      icon.outerHTML = `<i data-lucide="${isDark ? "sun" : "moon"}"></i>`;
+      const replacement = document.createElement("i");
+      replacement.setAttribute(
+        "data-lucide",
+        isDark ? "sun" : "moon"
+      );
+      icon.replaceWith(replacement);
     }
-
-    initializeIcons();
   }
+
+  initializeIcons();
 }
 
 function toggleTheme() {
@@ -116,22 +123,21 @@ function toggleTheme() {
       "portfolio-theme",
       isDark ? "dark" : "light"
     );
-  } catch (error) {
-    // Theme still works if local storage is unavailable.
+  } catch {
+    // Theme switching still works when storage is unavailable.
   }
 
   updateThemeButtons();
 }
 
-// Restore previously selected theme.
 try {
   const savedTheme = localStorage.getItem("portfolio-theme");
 
   if (savedTheme === "dark") {
     body.classList.add("dark-theme");
   }
-} catch (error) {
-  // Keep the default light theme.
+} catch {
+  // Use the default light theme.
 }
 
 if (desktopThemeToggle) {
@@ -142,31 +148,31 @@ if (mobileThemeToggle) {
   mobileThemeToggle.addEventListener("click", () => {
     toggleTheme();
     closeMenu();
+
+    if (hamburger) {
+      hamburger.focus();
+    }
   });
 }
 
-
-/* =========================
-   BACK TO TOP
-========================= */
+/* BACK TO TOP */
 
 const backToTop = document.querySelector(".back-to-top");
 
 if (backToTop) {
   backToTop.addEventListener("click", () => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
     window.scrollTo({
       top: 0,
-      behavior: window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches ? "auto" : "smooth"
+      behavior: prefersReducedMotion ? "auto" : "smooth"
     });
   });
 }
 
-
-/* =========================
-   FOOTER YEAR
-========================= */
+/* FOOTER YEAR */
 
 const yearElement = document.getElementById("current-year");
 
@@ -174,10 +180,7 @@ if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 
-
-/* =========================
-   FOOTER EASTER EGG
-========================= */
+/* FOOTER EASTER EGG */
 
 const egg = document.querySelector(".easter-egg");
 
@@ -193,10 +196,6 @@ if (egg) {
   });
 }
 
+/* INITIALIZE */
 
-/* =========================
-   INITIALIZE
-========================= */
-
-initializeIcons();
 updateThemeButtons();
