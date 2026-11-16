@@ -1,318 +1,571 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <title>Utsav Dhakal | Front-End Developer</title>
-    <!-- Google Font -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Portfolio of Utsav Dhakal, a Computer System Technician – Software Support graduate based in Saskatoon, Saskatchewan.">
+
+  <title>Utsav Dhakal | IT Support & Software Support</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Lucide: pinned version for reliable loading -->
+  <script
+    src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+    defer></script>
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
 </head>
+
 <body>
-    <!--Desktop Navigation-->
-    <nav id="desktop-nav" class="navbar">
-        <div class="logo-container">
-            <a href="#profile">
-                <img src="./assets/logo.svg" alt="Utsav logo" class="logo">
-            </a>
-        </div>
 
-        <ul class="nav-links">
-            <li><a href="#profile" class="link-to">Home</a></li>
-            <li><a href="#about" class="link-to">About</a></li>
-            <li><a href="#experience" class="link-to">Experience</a></li>
-            <li><a href="#projects" class="link-to">Projects</a></li>
-            <li><a href="#contact" class="link-to">Contact</a></li>
-        </ul>
+  <!-- DESKTOP NAVIGATION -->
+  <nav id="desktop-nav" aria-label="Main navigation">
+    <a href="#profile" class="brand-name">
+      Utsav <span>D.</span>
+    </a>
 
-        <button id="theme-toggle" type="button">🌞</button>
-    </nav>
-    
-    <!--Hamburger Navigation-->
-    <nav id="hamburger-nav">
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <ul class="menu-links">
-                <li><a href="#profile" onclick="toggleMenu()">Home</a></li>
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <ul class="nav-links">
+      <li><a href="#profile">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-    <!--PROFILE-->
+    <button id="theme-toggle" type="button"
+      aria-label="Switch to dark theme">
+      🌙
+    </button>
+  </nav>
+
+  <!-- MOBILE NAVIGATION -->
+  <nav id="hamburger-nav" aria-label="Mobile navigation">
+    <a href="#profile" class="brand-name">
+      Utsav <span>D.</span>
+    </a>
+
+    <div class="hamburger-menu">
+      <button class="hamburger-icon" type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="menu-links" id="mobile-menu">
+        <li><a href="#profile">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button id="mobile-theme-toggle" type="button">
+            <i data-lucide="moon"></i>
+            <span>Dark mode</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- FLOATING SOCIAL ICONS -->
+  <div class="socials-container">
+
+    <a href="https://www.linkedin.com/in/dhutsav/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      data-tooltip="LinkedIn"
+      aria-label="LinkedIn">
+      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://github.com/dhutsav"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      data-tooltip="GitHub"
+      aria-label="GitHub">
+      <i class="fa-brands fa-github" aria-hidden="true"></i>
+    </a>
+
+    <a href="mailto:dh.utsav23@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      data-tooltip="Email"
+      aria-label="Email">
+      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+    </a>
+
+  </div>
+
+  <main>
+
+    <!-- HOME -->
     <section id="profile">
-        <div class="container">
-            <div class="socials-container">
-                <a href="https://www.linkedin.com/in/dhutsav/" target="_blank" class="social-icon" data-tooltip="LinkedIn">
-                    <i data-lucide="linkedin"></i>
-                </a>
-                <a href="https://github.com/dhutsav/" target="_blank" class="social-icon" data-tooltip="GitHub">
-                    <i data-lucide="github"></i>
-                </a>
-                <a href="mailto:dh.utsav23@gmail.com" class="social-icon" data-tooltip="Email">
-                    <i data-lucide="mail"></i>
-                </a>
+      <div class="container">
+
+        <div class="hero-text">
+          <p class="hero-eyebrow">HELLO, I'M</p>
+
+          <h1 class="hero-title">
+            Utsav <span>Dhakal</span>
+          </h1>
+
+          <p class="hero-role">
+            IT Support <span>|</span>
+            Software Support <span>|</span>
+            Web Development
+          </p>
+
+          <p class="hero-desc">
+            Computer System Technician – Software Support graduate
+            with hands-on technical lab training and customer support
+            experience. Interested in troubleshooting, helping people
+            solve technical problems, and building reliable digital
+            experiences.
+          </p>
+
+          <div class="hero-stats">
+            <div>
+              <strong>Mohawk College</strong>
+              <small>Diploma Graduate</small>
             </div>
-            <div class="hero-text">
-                <p class="section-text">Hello, I'm</p>
-                <h1 class="hero-title">Utsav <span>Dhakal</span></h1>
-                <p class="section-text">Front-End Developer</p>
-                <p class="hero-desc">I design and build modern, responsive, and user-focused web interfaces.</p>
-                <div class="hero-stats"><div><strong>Hands-on</strong><span>Experience</span></div>
-                <div><strong>Multiple Personal</strong><span>Projects</span></div>
-                <div><strong>100%</strong><span>Responsive</span></div></div>
-                <div class="btn-container">
-                    <button class="btn btn-outline"onclick="window.open('./assets/resume.docx')">Download CV</button>
-                    <button class="btn btn-primary"onclick="location.href='#contact'">Contact Me</button>
-                </div>
+
+            <div>
+              <strong>IT Support</strong>
+              <small>Technical Lab Training</small>
             </div>
+
+            <div>
+              <strong>Saskatoon, SK</strong>
+              <small>Based in Canada</small>
+            </div>
+          </div>
+
+          <div class="btn-container">
+            <a href="./assets/Resume_Utsav_Dhakal.pdf"
+              class="btn btn-outline" download>
+              <i data-lucide="download"></i>
+              Download Resume
+            </a>
+
+            <a href="#contact" class="btn btn-primary">
+              <i data-lucide="send"></i>
+              Contact Me
+            </a>
+          </div>
+
+          <p class="hero-availability">
+            <span class="availability-dot"></span>
+            Open to entry-level IT Support and Service Desk opportunities
+          </p>
         </div>
+
+      </div>
     </section>
 
-    <!--ABOUT ME-->
+    <!-- ABOUT -->
     <section id="about">
-        <div class="container about-grid">
-            <!-- LEFT: IMAGE -->
-             <div class="about-image">
-                <img src="./assets/about1.jpeg" alt="Utsav Dhakal">
+      <div class="container about-grid">
+
+        <div class="about-image">
+          <div class="about-tech-visual">
+
+            <div class="tech-visual-heading">
+              <span class="tech-status"></span>
+              TECHNICAL WORKSPACE
             </div>
-            <!-- RIGHT: CONTENT -->
-             <div class="about-content">
-                <h2 class="section-title">About Me</h2>
-                <p class="about-intro">
-                    I'm a Front-End Developer and Computer System Technician student based in
-                    Saskatoon, Canada. I enjoy building clean, responsive, and user-focused web
-                    interfaces while continuously improving my technical skills.
-                </p>
-                <!-- CARDS -->
-                 <div class="about-cards">
-                    <div class="about-card">
-                        <h3>Experience</h3>
-                        <p>2+ Years<br>Front-End Development</p>
-                    </div>
-                    <div class="about-card">
-                        <h3>Education</h3>
-                        <p>Diploma<br>Computer System Technician</p>
-                    </div>
-                </div>
-                <!-- SKILLS -->
-                 <div class="about-skills">
-                    <h3>Skills</h3>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>PHP</li>
-                        <li>Bootstrap</li>
-                        <li>MySQL</li>
-                        <li>Git & GitHub</li>
-                        <li>XAMPP</li>
-                    </ul>
-                </div>
-                
-                <!-- PERSONAL -->
-                 <div class="about-extra">
-                    <p>
-                        I’m currently learning Mobile Web Development, Cloud Computing, and
-                        Data Structures & Algorithms. I love exploring modern web design trends
-                        and building real-world projects.
-                    </p>
-                </div>
+
+            <div class="tech-main-icon">
+              <i data-lucide="monitor-cog"></i>
             </div>
+
+            <h3>IT Support & Systems</h3>
+            <p>Learning. Troubleshooting. Building.</p>
+
+            <div class="tech-visual-tags">
+              <span>Windows</span>
+              <span>Microsoft 365</span>
+              <span>Networking</span>
+              <span>Web Development</span>
+            </div>
+          </div>
         </div>
+
+        <div class="about-content">
+          <p class="section-eyebrow">GET TO KNOW ME</p>
+          <h2 class="section-title">About Me</h2>
+
+          <p class="about-intro">
+            I'm a Computer System Technician – Software Support
+            graduate from Mohawk College, currently based in
+            Saskatoon, Saskatchewan.
+          </p>
+
+          <p class="about-intro">
+            My technical background includes Windows operating
+            systems, Microsoft 365, Active Directory, networking
+            fundamentals, and virtualization through college
+            coursework and hands-on labs.
+          </p>
+
+          <p class="about-intro">
+            Alongside my technical education, I work in customer
+            support at Sport Chek, where I've developed communication,
+            problem-solving, and teamwork skills while assisting
+            customers in a fast-paced environment.
+          </p>
+
+          <div class="about-cards">
+            <div class="about-card">
+              <i data-lucide="graduation-cap"></i>
+              <h3>Education</h3>
+              <p>Computer System Technician – Software Support</p>
+              <small>Mohawk College</small>
+            </div>
+
+            <div class="about-card">
+              <i data-lucide="briefcase-business"></i>
+              <h3>Experience</h3>
+              <p>Customer Support</p>
+              <small>Sport Chek · Oct 2024–Present</small>
+            </div>
+          </div>
+
+          <div class="about-skills">
+            <h3>Technical Interests</h3>
+
+            <ul>
+              <li>IT Support</li>
+              <li>Windows</li>
+              <li>Microsoft 365</li>
+              <li>Active Directory</li>
+              <li>Networking</li>
+              <li>Virtualization</li>
+              <li>Web Development</li>
+            </ul>
+          </div>
+
+          <div class="about-extra">
+            <p>
+              I'm currently working toward CompTIA A+ certification
+              and continuing to strengthen my technical support
+              skills. My goal is to begin in an entry-level IT
+              support role and grow into more advanced technical
+              positions.
+            </p>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <!--EXPERIENCE-->
+    <!-- SKILLS -->
     <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Experience & Skills</h2>
-            <div class="experience-grid">
+      <div class="container">
 
-                <!-- FRONTEND -->
-                 <div class="experience-card">
-                    <h3 class="experience-title">Frontend</h3>
-                    <ul class="skill-list">
-                        <li><span>HTML</span><small>Experienced</small></li>
-                        <li><span>CSS</span><small>Experienced</small></li>
-                        <li><span>JavaScript</span><small>Experienced</small></li>
-                        <li><span>Material UI</span><small>Intermediate</small></li>
-                    </ul>
-                </div>
-
-                <!-- BACKEND & TOOLS -->
-                 <div class="experience-card">
-                    <h3 class="experience-title">Backend & Tools</h3>
-                    <ul class="skill-list">
-                        <li><span>Node.js</span><small>Experienced</small></li>
-                        <li><span>PostgreSQL</span><small>Experienced</small></li>
-                        <li><span>Python</span><small>Experienced</small></li>
-                        <li><span>Java</span><small>Intermediate</small></li>
-                        <li><span>Bootstrap</span><small>Experienced</small></li>
-                        <li><span>Git</span><small>Intermediate</small></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="section-heading">
+          <p class="section-eyebrow">WHAT I'VE LEARNED</p>
+          <h2 class="section-title">Technical Skills & Experience</h2>
+          <p class="section-description">
+            Skills developed through my diploma program,
+            technical labs, independent learning, and
+            customer-facing work experience.
+          </p>
         </div>
-    </section>
 
-    <!--PROJECTS-->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            
-            <div class="projects-grid">
-                <!-- Project Card -->
-                 <article class="project-card">
-                    <div class="project-image">
-                        <img src="./assets/about1.jpeg" alt="Project One">
-                    </div>
-                    
-                    <div class="project-content">
-                        <h3>Project One</h3>
-                        <p class="project-desc">
-                            A modern responsive web application built using HTML, CSS and JavaScript.
-                        </p>
-                        
-                        <div class="project-buttons">
-                            <a href="https://github.com/dhutsav?tab=repositories" target="_blank" class="btn btn-outline">GitHub</a>
-                            <a href="https://github.com/dhutsav?tab=repositories" target="_blank" class="btn btn-primary">Live Demo</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Project Card -->
-                 <article class="project-card">
-                    <div class="project-image">
-                        <img src="./assets/about1.jpeg" alt="Project Two">
-                    </div>
-                    
-                    <div class="project-content">
-                        <h3>Project Two</h3>
-                        <p class="project-desc">
-                            Frontend-focused project with clean UI, accessibility and responsiveness.
-                        </p>
-                        <div class="project-buttons">
-                            <a href="#" class="btn btn-outline">GitHub</a>
-                            <a href="#" class="btn btn-primary">Live Demo</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Project Card -->
-                 <article class="project-card">
-                    <div class="project-image">
-                        <img src="./assets/about1.jpeg" alt="Project Three">
-                    </div>
-                    
-                    <div class="project-content">
-                        <h3>Project Three</h3>
-                        <p class="project-desc">
-                            Full project showcasing UI design, interaction, and real-world layout.
-                        </p>
-                        <div class="project-buttons">
-                            <a href="#" class="btn btn-outline">GitHub</a>
-                            <a href="#" class="btn btn-primary">Live Demo</a>
-                        </div>
-                    </div>
-                </article>
+        <div class="experience-grid">
+
+          <div class="experience-card">
+            <div class="experience-icon">
+              <i data-lucide="monitor-cog"></i>
             </div>
-        </div>
-    </section>
 
-    <!--CONTACT-->
-    <section id="contact" class="contact-section">
-        <h1 class="contact-title">Let’s Connect</h1>
-        <p class="contact-subtitle">
-            Have a question, project idea, or opportunity? I’d love to hear from you.
+            <h3 class="experience-title">IT Support & Systems</h3>
+
+            <ul class="skill-list">
+              <li><span>Windows 10 / 11</span><small>Lab Training</small></li>
+              <li><span>Microsoft 365</span><small>Lab Training</small></li>
+              <li><span>Active Directory</span><small>Lab Training</small></li>
+              <li><span>User Account Management</span><small>Lab Training</small></li>
+              <li><span>Group Policy Fundamentals</span><small>Lab Training</small></li>
+              <li><span>Technical Troubleshooting</span><small>Foundational</small></li>
+            </ul>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-icon">
+              <i data-lucide="network"></i>
+            </div>
+
+            <h3 class="experience-title">Networking & Virtualization</h3>
+
+            <ul class="skill-list">
+              <li><span>TCP/IP Fundamentals</span><small>Foundational</small></li>
+              <li><span>DNS & DHCP</span><small>Foundational</small></li>
+              <li><span>LAN & Wi-Fi Troubleshooting</span><small>Foundational</small></li>
+              <li><span>VirtualBox</span><small>Lab Training</small></li>
+              <li><span>VMware</span><small>Lab Training</small></li>
+              <li><span>VPN Concepts</span><small>Foundational</small></li>
+            </ul>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-icon">
+              <i data-lucide="code-2"></i>
+            </div>
+
+            <h3 class="experience-title">Web Development</h3>
+
+            <ul class="skill-list">
+              <li><span>HTML5</span><small>Coursework / Projects</small></li>
+              <li><span>CSS3</span><small>Coursework / Projects</small></li>
+              <li><span>JavaScript</span><small>Coursework / Projects</small></li>
+              <li><span>Responsive Web Design</span><small>Projects</small></li>
+              <li><span>Git & GitHub</span><small>Projects</small></li>
+            </ul>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-icon">
+              <i data-lucide="headset"></i>
+            </div>
+
+            <h3 class="experience-title">Customer Support</h3>
+
+            <ul class="skill-list">
+              <li><span>Customer Communication</span><small>Work Experience</small></li>
+              <li><span>Problem Solving</span><small>Work Experience</small></li>
+              <li><span>Issue Escalation</span><small>Work Experience</small></li>
+              <li><span>Team Collaboration</span><small>Work Experience</small></li>
+              <li><span>Training New Employees</span><small>Work Experience</small></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="skills-note">
+          Technical systems skills are based primarily on college
+          lab training. Customer support skills reflect professional
+          work experience.
         </p>
-        
-        <div class="contact-cards">
-            <!-- Email -->
-             <a href="mailto:utsavdhakal3@gmail.com" class="contact-card">
-                <span class="contact-icon">✉️</span>
-                <div>
-                    <h3>Email</h3>
-                    <p>utsavdhakal3@gmail.com</p>
-                </div>
-            </a>
-            
-            <!-- LinkedIn -->
-             <a href="https://www.linkedin.com/in/dhutsav/" target="_blank" class="contact-card">
-                <span class="contact-icon">💼</span>
-                <div>
-                    <h3>LinkedIn</h3>
-                    <p>linkedin.com/in/dhutsav</p>
-                </div>
-            </a>
-            
-            <!-- GitHub -->
-             <a href="https://github.com/dhutsav" target="_blank" class="contact-card">
-                <span class="contact-icon">🐙</span>
-                <div>
-                    <h3>GitHub</h3>
-                    <p>github.com/dhutsav</p>
-                </div>
-            </a>
-        </div>
 
-        <!--FOOTER-->
-    <footer class="site-footer">
-        <div class="footer-container">
-            
-            <!-- Left -->
-             <div class="footer-left">
-                <p class="footer-name"><img src="./assets/logo.svg" alt="Utsav logo" class="logo"></p>
-                <p class="footer-role">Front-End Developer</p>
-            </div>
-            
-            <!-- Center socials -->
-             <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/dhutsav/" target="_blank" aria-label="LinkedIn">
-                    <i data-lucide="linkedin"></i>
-                </a>
-                <a href="https://github.com/dhutsav/" target="_blank" aria-label="GitHub">
-                    <i data-lucide="github"></i>
-                </a>
-                <a href="mailto:utsavdhakal3@gmail.com" aria-label="Email">
-                    <i data-lucide="mail"></i>
-                </a>
-            </div>
-            
-            <!-- Right -->
-             <div class="footer-right">
-                <p>© 2026</p>
-                <p class="easter-egg">Built with ❤️ & curiosity</p>
-            </div>
-        </div>
-        
-        <!-- Back to top -->
-         <button class="back-to-top" aria-label="Back to top">
-            <i data-lucide="arrow-up"></i>
-        </button>
-    </footer>
+      </div>
     </section>
 
-    
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
 
+        <div class="section-heading">
+          <p class="section-eyebrow">PRACTICAL LEARNING</p>
+          <h2 class="section-title">Technical Projects & Labs</h2>
+          <p class="section-description">
+            Technical exercises and coursework that helped
+            me build my IT foundation.
+          </p>
+        </div>
 
-    <!--SCRIPTS-->
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-    lucide.createIcons();
-    </script>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-visual windows-visual">
+              <i data-lucide="monitor-cog"></i>
+              <span>WINDOWS & ACTIVE DIRECTORY</span>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category">COLLEGE LAB</span>
+              <h3>Windows & Active Directory</h3>
+
+              <p class="project-desc">
+                Practiced configuring Windows environments,
+                creating and managing user accounts, resetting
+                passwords, and working with permissions and
+                Group Policy fundamentals.
+              </p>
+
+              <div class="project-tags">
+                <span>Windows</span>
+                <span>Active Directory</span>
+                <span>Group Policy</span>
+              </div>
+
+              <p class="project-note">
+                Completed as part of technical lab training.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual network-visual">
+              <i data-lucide="network"></i>
+              <span>NETWORKING & VIRTUALIZATION</span>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category">COLLEGE LAB</span>
+              <h3>Networking & Virtualization</h3>
+
+              <p class="project-desc">
+                Explored TCP/IP, DNS, DHCP, and network
+                connectivity concepts while using VirtualBox
+                and VMware to work with virtual machines
+                in lab environments.
+              </p>
+
+              <div class="project-tags">
+                <span>TCP/IP</span>
+                <span>DNS / DHCP</span>
+                <span>VMware</span>
+                <span>VirtualBox</span>
+              </div>
+
+              <p class="project-note">
+                Completed as part of technical lab training.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+      <div class="container contact-content">
+        <p class="section-eyebrow">GET IN TOUCH</p>
+        <h2 class="contact-title">Let's Connect</h2>
+
+        <p class="contact-subtitle">
+          I'm interested in entry-level IT Support, Help Desk,
+          Service Desk, and Software Support opportunities.
+          Feel free to reach out.
+        </p>
+
+        <p class="contact-location">
+          <i data-lucide="map-pin"></i>
+          Saskatoon, Saskatchewan, Canada
+        </p>
+
+        <div class="contact-cards">
+
+          <a href="mailto:dh.utsav23@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card">
+            <span class="contact-icon">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            </span>
+            <div>
+              <h3>Email</h3>
+              <p>dh.utsav23@gmail.com</p>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/dhutsav/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card">
+            <span class="contact-icon">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </span>
+            <div>
+              <h3>LinkedIn</h3>
+              <p>linkedin.com/in/dhutsav</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/dhutsav"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card">
+            <span class="contact-icon">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </span>
+            <div>
+              <h3>GitHub</h3>
+              <p>github.com/dhutsav</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <div class="footer-container">
+
+          <div class="footer-left">
+            <a href="#profile" class="brand-name footer-brand">
+              Utsav <span>D.</span>
+            </a>
+            <p class="footer-role">
+              IT Support | Software Support
+            </p>
+          </div>
+
+          <div class="footer-socials">
+
+            <a href="https://www.linkedin.com/in/dhutsav/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://github.com/dhutsav"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+
+            <a href="mailto:dh.utsav23@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            </a>
+
+          </div>
+
+          <div class="footer-right">
+            <p>© <span id="current-year">2026</span> Utsav Dhakal</p>
+            <p class="easter-egg">Built with ❤️ & curiosity</p>
+          </div>
+
+        </div>
+
+        <button class="back-to-top" type="button"
+          aria-label="Back to top">
+          <i data-lucide="arrow-up"></i>
+        </button>
+      </footer>
+
+    </section>
+
+  </main>
+
 </body>
 </html>
