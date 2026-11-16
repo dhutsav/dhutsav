@@ -5,56 +5,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="description"
+    content="Portfolio of Utsav Dhakal, a Computer System Technician – Software Support graduate based in Saskatoon, Saskatchewan.">
+
   <title>Utsav Dhakal | IT Support & Software Support</title>
 
-  <meta name="description"
-    content="Portfolio of Utsav Dhakal, a Computer System Technician – Software Support graduate based in Saskatoon, Saskatchewan. Explore IT support skills, technical labs, and web development.">
-
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="mediaqueries.css">
-
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Lucide: pinned version for reliable loading -->
+  <script
+    src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+    defer></script>
+
+  <!-- JavaScript -->
   <script src="script.js" defer></script>
 </head>
 
 <body>
 
   <!-- DESKTOP NAVIGATION -->
-  <nav id="desktop-nav" class="navbar" aria-label="Main navigation">
-    <div class="logo-container">
-      <a href="#profile" aria-label="Go to homepage">
-        <img src="./assets/logo.svg" alt="Utsav logo" class="logo">
-      </a>
-    </div>
+  <nav id="desktop-nav" aria-label="Main navigation">
+    <a href="#profile" class="brand-name">
+      Utsav <span>D.</span>
+    </a>
 
     <ul class="nav-links">
-      <li><a href="#profile" class="link-to">Home</a></li>
-      <li><a href="#about" class="link-to">About</a></li>
-      <li><a href="#experience" class="link-to">Skills</a></li>
-      <li><a href="#projects" class="link-to">Projects</a></li>
-      <li><a href="#contact" class="link-to">Contact</a></li>
+      <li><a href="#profile">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
 
     <button id="theme-toggle" type="button"
-      aria-label="Switch to dark theme">🌙</button>
+      aria-label="Switch to dark theme">
+      🌙
+    </button>
   </nav>
 
   <!-- MOBILE NAVIGATION -->
   <nav id="hamburger-nav" aria-label="Mobile navigation">
-    <a href="#profile" aria-label="Go to homepage">
-      <img src="./assets/logo.svg" alt="Utsav logo" class="logo">
+    <a href="#profile" class="brand-name">
+      Utsav <span>D.</span>
     </a>
 
     <div class="hamburger-menu">
       <button class="hamburger-icon" type="button"
         aria-label="Open navigation menu"
         aria-expanded="false"
-        aria-controls="mobile-menu"
-        onclick="toggleMenu()">
+        aria-controls="mobile-menu">
         <span></span>
         <span></span>
         <span></span>
@@ -66,9 +75,47 @@
         <li><a href="#experience">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li>
+          <button id="mobile-theme-toggle" type="button">
+            <i data-lucide="moon"></i>
+            <span>Dark mode</span>
+          </button>
+        </li>
       </ul>
     </div>
   </nav>
+
+  <!-- FLOATING SOCIAL ICONS -->
+  <div class="socials-container">
+
+    <a href="https://www.linkedin.com/in/dhutsav/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      data-tooltip="LinkedIn"
+      aria-label="LinkedIn">
+      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://github.com/dhutsav"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      data-tooltip="GitHub"
+      aria-label="GitHub">
+      <i class="fa-brands fa-github" aria-hidden="true"></i>
+    </a>
+
+    <a href="mailto:dh.utsav23@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      data-tooltip="Email"
+      aria-label="Email">
+      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+    </a>
+
+  </div>
 
   <main>
 
@@ -76,64 +123,41 @@
     <section id="profile">
       <div class="container">
 
-        <div class="socials-container">
-          <a href="https://www.linkedin.com/in/dhutsav/"
-            target="_blank" rel="noopener noreferrer"
-            class="social-icon" data-tooltip="LinkedIn"
-            aria-label="LinkedIn">
-            <i data-lucide="linkedin"></i>
-          </a>
-
-          <a href="https://github.com/dhutsav"
-            target="_blank" rel="noopener noreferrer"
-            class="social-icon" data-tooltip="GitHub"
-            aria-label="GitHub">
-            <i data-lucide="github"></i>
-          </a>
-
-          <a href="mailto:dh.utsav23@gmail.com"
-            class="social-icon" data-tooltip="Email"
-            aria-label="Email">
-            <i data-lucide="mail"></i>
-          </a>
-        </div>
-
         <div class="hero-text">
-          <p class="hero-eyebrow">
-            HELLO, I'M
-          </p>
+          <p class="hero-eyebrow">HELLO, I'M</p>
 
           <h1 class="hero-title">
             Utsav <span>Dhakal</span>
           </h1>
 
           <p class="hero-role">
-            IT Support <span class="role-divider">|</span>
-            Software Support <span class="role-divider">|</span>
+            IT Support <span>|</span>
+            Software Support <span>|</span>
             Web Development
           </p>
 
           <p class="hero-desc">
             Computer System Technician – Software Support graduate
             with hands-on technical lab training and customer support
-            experience. Interested in helping people solve technical
-            problems and building reliable digital experiences.
+            experience. Interested in troubleshooting, helping people
+            solve technical problems, and building reliable digital
+            experiences.
           </p>
 
           <div class="hero-stats">
             <div>
               <strong>Mohawk College</strong>
-              <span>Diploma Graduate</span>
+              <small>Diploma Graduate</small>
             </div>
 
             <div>
               <strong>IT Support</strong>
-              <span>Technical Lab Training</span>
+              <small>Technical Lab Training</small>
             </div>
 
             <div>
               <strong>Saskatoon, SK</strong>
-              <span>Based in Canada</span>
+              <small>Based in Canada</small>
             </div>
           </div>
 
@@ -155,6 +179,7 @@
             Open to entry-level IT Support and Service Desk opportunities
           </p>
         </div>
+
       </div>
     </section>
 
@@ -163,9 +188,27 @@
       <div class="container about-grid">
 
         <div class="about-image">
-          <img src="./assets/about1.jpeg"
-            alt="Portrait of Utsav Dhakal"
-            loading="lazy">
+          <div class="about-tech-visual">
+
+            <div class="tech-visual-heading">
+              <span class="tech-status"></span>
+              TECHNICAL WORKSPACE
+            </div>
+
+            <div class="tech-main-icon">
+              <i data-lucide="monitor-cog"></i>
+            </div>
+
+            <h3>IT Support & Systems</h3>
+            <p>Learning. Troubleshooting. Building.</p>
+
+            <div class="tech-visual-tags">
+              <span>Windows</span>
+              <span>Microsoft 365</span>
+              <span>Networking</span>
+              <span>Web Development</span>
+            </div>
+          </div>
         </div>
 
         <div class="about-content">
@@ -187,21 +230,17 @@
 
           <p class="about-intro">
             Alongside my technical education, I work in customer
-            support at Sport Chek, where I've developed
-            communication, troubleshooting, and problem-solving
-            skills while assisting customers in a fast-paced
-            environment.
+            support at Sport Chek, where I've developed communication,
+            problem-solving, and teamwork skills while assisting
+            customers in a fast-paced environment.
           </p>
 
           <div class="about-cards">
             <div class="about-card">
               <i data-lucide="graduation-cap"></i>
               <h3>Education</h3>
-              <p>
-                Computer System Technician –
-                Software Support
-              </p>
-              <small>Mohawk College · 2025</small>
+              <p>Computer System Technician – Software Support</p>
+              <small>Mohawk College</small>
             </div>
 
             <div class="about-card">
@@ -214,6 +253,7 @@
 
           <div class="about-skills">
             <h3>Technical Interests</h3>
+
             <ul>
               <li>IT Support</li>
               <li>Windows</li>
@@ -229,10 +269,12 @@
             <p>
               I'm currently working toward CompTIA A+ certification
               and continuing to strengthen my technical support
-              skills. My goal is to grow from an entry-level IT
-              support role into more advanced technical positions.
+              skills. My goal is to begin in an entry-level IT
+              support role and grow into more advanced technical
+              positions.
             </p>
           </div>
+
         </div>
       </div>
     </section>
@@ -255,38 +297,18 @@
 
           <div class="experience-card">
             <div class="experience-icon">
-              <i data-lucide="monitor"></i>
+              <i data-lucide="monitor-cog"></i>
             </div>
 
-            <h3 class="experience-title">
-              IT Support & Systems
-            </h3>
+            <h3 class="experience-title">IT Support & Systems</h3>
 
             <ul class="skill-list">
-              <li>
-                <span>Windows 10 / 11</span>
-                <small>Lab Training</small>
-              </li>
-              <li>
-                <span>Microsoft 365</span>
-                <small>Lab Training</small>
-              </li>
-              <li>
-                <span>Active Directory</span>
-                <small>Lab Training</small>
-              </li>
-              <li>
-                <span>User Account Management</span>
-                <small>Lab Training</small>
-              </li>
-              <li>
-                <span>Group Policy Fundamentals</span>
-                <small>Lab Training</small>
-              </li>
-              <li>
-                <span>Technical Troubleshooting</span>
-                <small>Foundational</small>
-              </li>
+              <li><span>Windows 10 / 11</span><small>Lab Training</small></li>
+              <li><span>Microsoft 365</span><small>Lab Training</small></li>
+              <li><span>Active Directory</span><small>Lab Training</small></li>
+              <li><span>User Account Management</span><small>Lab Training</small></li>
+              <li><span>Group Policy Fundamentals</span><small>Lab Training</small></li>
+              <li><span>Technical Troubleshooting</span><small>Foundational</small></li>
             </ul>
           </div>
 
@@ -295,35 +317,15 @@
               <i data-lucide="network"></i>
             </div>
 
-            <h3 class="experience-title">
-              Networking & Virtualization
-            </h3>
+            <h3 class="experience-title">Networking & Virtualization</h3>
 
             <ul class="skill-list">
-              <li>
-                <span>TCP/IP Fundamentals</span>
-                <small>Foundational</small>
-              </li>
-              <li>
-                <span>DNS & DHCP</span>
-                <small>Foundational</small>
-              </li>
-              <li>
-                <span>LAN & Wi-Fi Troubleshooting</span>
-                <small>Foundational</small>
-              </li>
-              <li>
-                <span>VirtualBox</span>
-                <small>Lab Training</small>
-              </li>
-              <li>
-                <span>VMware</span>
-                <small>Lab Training</small>
-              </li>
-              <li>
-                <span>VPN Concepts</span>
-                <small>Foundational</small>
-              </li>
+              <li><span>TCP/IP Fundamentals</span><small>Foundational</small></li>
+              <li><span>DNS & DHCP</span><small>Foundational</small></li>
+              <li><span>LAN & Wi-Fi Troubleshooting</span><small>Foundational</small></li>
+              <li><span>VirtualBox</span><small>Lab Training</small></li>
+              <li><span>VMware</span><small>Lab Training</small></li>
+              <li><span>VPN Concepts</span><small>Foundational</small></li>
             </ul>
           </div>
 
@@ -332,31 +334,14 @@
               <i data-lucide="code-2"></i>
             </div>
 
-            <h3 class="experience-title">
-              Web Development
-            </h3>
+            <h3 class="experience-title">Web Development</h3>
 
             <ul class="skill-list">
-              <li>
-                <span>HTML5</span>
-                <small>Coursework / Projects</small>
-              </li>
-              <li>
-                <span>CSS3</span>
-                <small>Coursework / Projects</small>
-              </li>
-              <li>
-                <span>JavaScript</span>
-                <small>Coursework / Projects</small>
-              </li>
-              <li>
-                <span>Responsive Web Design</span>
-                <small>Projects</small>
-              </li>
-              <li>
-                <span>Git & GitHub</span>
-                <small>Projects</small>
-              </li>
+              <li><span>HTML5</span><small>Coursework / Projects</small></li>
+              <li><span>CSS3</span><small>Coursework / Projects</small></li>
+              <li><span>JavaScript</span><small>Coursework / Projects</small></li>
+              <li><span>Responsive Web Design</span><small>Projects</small></li>
+              <li><span>Git & GitHub</span><small>Projects</small></li>
             </ul>
           </div>
 
@@ -365,41 +350,25 @@
               <i data-lucide="headset"></i>
             </div>
 
-            <h3 class="experience-title">
-              Customer Support
-            </h3>
+            <h3 class="experience-title">Customer Support</h3>
 
             <ul class="skill-list">
-              <li>
-                <span>Customer Communication</span>
-                <small>Work Experience</small>
-              </li>
-              <li>
-                <span>Problem Solving</span>
-                <small>Work Experience</small>
-              </li>
-              <li>
-                <span>Issue Escalation</span>
-                <small>Work Experience</small>
-              </li>
-              <li>
-                <span>Team Collaboration</span>
-                <small>Work Experience</small>
-              </li>
-              <li>
-                <span>Training New Employees</span>
-                <small>Work Experience</small>
-              </li>
+              <li><span>Customer Communication</span><small>Work Experience</small></li>
+              <li><span>Problem Solving</span><small>Work Experience</small></li>
+              <li><span>Issue Escalation</span><small>Work Experience</small></li>
+              <li><span>Team Collaboration</span><small>Work Experience</small></li>
+              <li><span>Training New Employees</span><small>Work Experience</small></li>
             </ul>
           </div>
 
         </div>
 
         <p class="skills-note">
-          Technical systems skills are based primarily on
-          college lab training. Customer support skills
-          reflect professional work experience.
+          Technical systems skills are based primarily on college
+          lab training. Customer support skills reflect professional
+          work experience.
         </p>
+
       </div>
     </section>
 
@@ -411,15 +380,15 @@
           <p class="section-eyebrow">PRACTICAL LEARNING</p>
           <h2 class="section-title">Technical Projects & Labs</h2>
           <p class="section-description">
-            A selection of technical exercises and coursework
-            that helped me build my IT foundation.
+            Technical exercises and coursework that helped
+            me build my IT foundation.
           </p>
         </div>
 
         <div class="projects-grid">
 
           <article class="project-card">
-            <div class="project-image project-visual windows-visual">
+            <div class="project-visual windows-visual">
               <i data-lucide="monitor-cog"></i>
               <span>WINDOWS & ACTIVE DIRECTORY</span>
             </div>
@@ -430,9 +399,9 @@
 
               <p class="project-desc">
                 Practiced configuring Windows environments,
-                creating and managing user accounts,
-                resetting passwords, and working with
-                permissions and Group Policy fundamentals.
+                creating and managing user accounts, resetting
+                passwords, and working with permissions and
+                Group Policy fundamentals.
               </p>
 
               <div class="project-tags">
@@ -448,7 +417,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image project-visual network-visual">
+            <div class="project-visual network-visual">
               <i data-lucide="network"></i>
               <span>NETWORKING & VIRTUALIZATION</span>
             </div>
@@ -459,9 +428,9 @@
 
               <p class="project-desc">
                 Explored TCP/IP, DNS, DHCP, and network
-                connectivity concepts while using
-                VirtualBox and VMware to work with
-                virtual machines in lab environments.
+                connectivity concepts while using VirtualBox
+                and VMware to work with virtual machines
+                in lab environments.
               </p>
 
               <div class="project-tags">
@@ -482,11 +451,10 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="contact-section">
+    <section id="contact">
 
       <div class="container contact-content">
         <p class="section-eyebrow">GET IN TOUCH</p>
-
         <h2 class="contact-title">Let's Connect</h2>
 
         <p class="contact-subtitle">
@@ -495,12 +463,19 @@
           Feel free to reach out.
         </p>
 
+        <p class="contact-location">
+          <i data-lucide="map-pin"></i>
+          Saskatoon, Saskatchewan, Canada
+        </p>
+
         <div class="contact-cards">
 
           <a href="mailto:dh.utsav23@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             class="contact-card">
             <span class="contact-icon">
-              <i data-lucide="mail"></i>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
             </span>
             <div>
               <h3>Email</h3>
@@ -509,10 +484,11 @@
           </a>
 
           <a href="https://www.linkedin.com/in/dhutsav/"
-            target="_blank" rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
             class="contact-card">
             <span class="contact-icon">
-              <i data-lucide="linkedin"></i>
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
             </span>
             <div>
               <h3>LinkedIn</h3>
@@ -521,10 +497,11 @@
           </a>
 
           <a href="https://github.com/dhutsav"
-            target="_blank" rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
             class="contact-card">
             <span class="contact-icon">
-              <i data-lucide="github"></i>
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
             </span>
             <div>
               <h3>GitHub</h3>
@@ -540,30 +517,37 @@
         <div class="footer-container">
 
           <div class="footer-left">
-            <img src="./assets/logo.svg"
-              alt="Utsav logo" class="logo">
+            <a href="#profile" class="brand-name footer-brand">
+              Utsav <span>D.</span>
+            </a>
             <p class="footer-role">
               IT Support | Software Support
             </p>
           </div>
 
           <div class="footer-socials">
+
             <a href="https://www.linkedin.com/in/dhutsav/"
-              target="_blank" rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="LinkedIn">
-              <i data-lucide="linkedin"></i>
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
             </a>
 
             <a href="https://github.com/dhutsav"
-              target="_blank" rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="GitHub">
-              <i data-lucide="github"></i>
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
             </a>
 
             <a href="mailto:dh.utsav23@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Email">
-              <i data-lucide="mail"></i>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
             </a>
+
           </div>
 
           <div class="footer-right">
