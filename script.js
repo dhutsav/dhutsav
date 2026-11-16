@@ -1,145 +1,155 @@
 
-// =====================================
-// UTSAV DHAKAL — PORTFOLIO JAVASCRIPT
-// =====================================
+/* =========================
+   MOBILE NAVIGATION
+========================= */
 
-document.addEventListener("DOMContentLoaded", () => {
-  const body = document.body;
-  const themeToggle = document.getElementById("theme-toggle");
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-  const yearElement = document.getElementById("year");
+const menu = document.querySelector(".menu-links");
+const hamburger = document.querySelector(".hamburger-icon");
 
-  // -----------------------------------
-  // THEME TOGGLE
-  // -----------------------------------
+function closeMenu() {
+  menu.classList.remove("open");
+  hamburger.classList.remove("open");
 
-  function applyTheme(theme) {
-    const isLight = theme === "light";
+  hamburger.setAttribute("aria-expanded", "false");
+  hamburger.setAttribute(
+    "aria-label",
+    "Open navigation menu"
+  );
+}
 
-    body.classList.toggle("light-theme", isLight);
+function toggleMenu() {
+  const isOpen = menu.classList.toggle("open");
 
-    if (themeToggle) {
-      themeToggle.textContent = isLight ? "☾" : "☀";
+  hamburger.classList.toggle("open", isOpen);
 
-      themeToggle.setAttribute(
-        "aria-label",
-        isLight ? "Switch to dark mode" : "Switch to light mode"
-      );
-    }
-  }
+  hamburger.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
 
-  let savedTheme = null;
+  hamburger.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu"
+  );
+}
 
-  try {
-    savedTheme = localStorage.getItem("portfolio-theme");
-  } catch (error) {
-    // Continue with the default theme if storage is unavailable.
-  }
+// Close menu when a navigation link is selected
+document.querySelectorAll(".menu-links a").forEach(link => {
+  link.addEventListener("click", closeMenu);
+});
 
-  const initialTheme =
-    savedTheme === "light" || savedTheme === "dark"
-      ? savedTheme
-      : "dark";
-
-  applyTheme(initialTheme);
-
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      const newTheme = body.classList.contains("light-theme")
-        ? "dark"
-        : "light";
-
-      applyTheme(newTheme);
-
-      try {
-        localStorage.setItem("portfolio-theme", newTheme);
-      } catch (error) {
-        // The theme still works during this visit.
-      }
-    });
-  }
-
-  // -----------------------------------
-  // MOBILE MENU
-  // -----------------------------------
-
-  function setMenuOpen(isOpen) {
-    if (!menuToggle || !navLinks) return;
-
-    navLinks.classList.toggle("is-open", isOpen);
-
-    menuToggle.setAttribute(
-      "aria-expanded",
-      String(isOpen)
-    );
-
-    menuToggle.setAttribute(
-      "aria-label",
-      isOpen ? "Close navigation" : "Open navigation"
-    );
-  }
-
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.contains("is-open");
-      setMenuOpen(!isOpen);
-    });
-
-    // Close menu after clicking a navigation link.
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        setMenuOpen(false);
-      });
-    });
-
-    // Close menu when Escape is pressed.
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        const wasOpen = navLinks.classList.contains("is-open");
-        setMenuOpen(false);
-
-        if (wasOpen) {
-          menuToggle.focus();
-        }
-      }
-    });
-
-    // Close menu when clicking outside the navigation.
-    document.addEventListener("click", (event) => {
-      if (
-        navLinks.classList.contains("is-open") &&
-        !navLinks.contains(event.target) &&
-        !menuToggle.contains(event.target)
-      ) {
-        setMenuOpen(false);
-      }
-    });
-
-    // Reset the menu when switching to desktop width.
-    const desktopQuery = window.matchMedia("(min-width: 761px)");
-
-    function handleDesktopChange(event) {
-      if (event.matches) {
-        setMenuOpen(false);
-      }
-    }
-
-    if (desktopQuery.addEventListener) {
-      desktopQuery.addEventListener(
-        "change",
-        handleDesktopChange
-      );
-    } else if (desktopQuery.addListener) {
-      desktopQuery.addListener(handleDesktopChange);
-    }
-  }
-
-  // -----------------------------------
-  // FOOTER YEAR
-  // -----------------------------------
-
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
+// Close menu when Escape is pressed
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closeMenu();
   }
 });
+
+// Close menu when clicking outside
+document.addEventListener("click", event => {
+  const mobileNav = document.getElementById("hamburger-nav");
+
+  if (!mobileNav.contains(event.target)) {
+    closeMenu();
+  }
+});
+
+
+/* =========================
+   LIGHT / DARK THEME
+========================= */
+
+const toggleBtn = document.getElementById("theme-toggle");
+const body = document.body;
+
+function updateThemeButton() {
+  const darkMode = body.classList.contains("dark-theme");
+
+  toggleBtn.textContent = darkMode ? "☀️" : "🌙";
+
+  toggleBtn.setAttribute(
+    "aria-label",
+    darkMode
+      ? "Switch to light theme"
+      : "Switch to dark theme"
+  );
+}
+
+// Restore saved theme
+try {
+  const savedTheme = localStorage.getItem("portfolio-theme");
+
+  if (savedTheme === "dark") {
+    body.classList.add("dark-theme");
+  }
+} catch (error) {
+  // Continue with the default theme if storage is unavailable
+}
+
+updateThemeButton();
+
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("dark-theme");
+
+  const darkMode = body.classList.contains("dark-theme");
+
+  try {
+    localStorage.setItem(
+      "portfolio-theme",
+      darkMode ? "dark" : "light"
+    );
+  } catch (error) {
+    // Theme still works without local storage
+  }
+
+  updateThemeButton();
+});
+
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+const backToTop = document.querySelector(".back-to-top");
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+
+/* =========================
+   FOOTER YEAR
+========================= */
+
+const yearElement = document.getElementById("current-year");
+
+yearElement.textContent = new Date().getFullYear();
+
+
+/* =========================
+   FOOTER EASTER EGG
+========================= */
+
+const egg = document.querySelector(".easter-egg");
+
+let clicked = false;
+
+egg.addEventListener("click", () => {
+  clicked = !clicked;
+
+  egg.textContent = clicked
+    ? "Still curious? So am I 👀"
+    : "Built with ❤️ & curiosity";
+});
+
+
+/* =========================
+   LUCIDE ICONS
+========================= */
+
+if (typeof lucide !== "undefined") {
+  lucide.createIcons();
+}
